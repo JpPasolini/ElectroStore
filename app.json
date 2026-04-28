@@ -1,0 +1,22 @@
+{
+  "expo": {
+    "name": "ElectroStore",
+    "slug": "electrostore",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.electrostore"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0a0a2e"
+      },
+      "package": "com.electrostore"
+    },
+    "plugins": [
+      "expo-asset"
+    ]
+  }
+}
