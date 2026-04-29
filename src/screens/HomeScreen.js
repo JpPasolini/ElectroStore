@@ -13,7 +13,13 @@ import {
 } from 'react-native';
 import axios from 'axios';
 
-const CATEGORIES = ['Eletrônicos', 'Jóias', "Roupas Masculinas", "Roupas Femininas"];
+/* 🔥 MAPEAMENTO CORRETO DAS CATEGORIAS */
+const CATEGORIES = [
+  { label: 'Eletrônicos', value: 'electronics' },
+  { label: 'Jóias', value: 'jewelery' },
+  { label: 'Roupas Masculinas', value: "men's clothing" },
+  { label: 'Roupas Femininas', value: "women's clothing" },
+];
 
 function formatBRL(price) {
   return new Intl.NumberFormat('pt-BR', {
@@ -27,6 +33,7 @@ export default function HomeScreen({ navigation }) {
   const [loading, setLoading] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
+  /* 🔥 BUSCAR PRODUTOS */
   const fetchProducts = useCallback(async (category) => {
     setLoading(true);
 
@@ -38,7 +45,7 @@ export default function HomeScreen({ navigation }) {
       const response = await axios.get(url);
       const data = response.data;
 
-
+      /* 🔥 TRADUZIR TITULOS AUTOMATICAMENTE */
       const translatedProducts = await Promise.all(
         data.map(async (item) => {
           try {
@@ -51,7 +58,6 @@ export default function HomeScreen({ navigation }) {
 
           } catch (error) {
             console.log("Erro ao traduzir:", error);
-
             return {
               ...item,
               translatedTitle: item.title,
@@ -74,6 +80,7 @@ export default function HomeScreen({ navigation }) {
     fetchProducts(selectedCategory);
   }, [selectedCategory, fetchProducts]);
 
+  /* 🔥 CARD PRODUTO */
   function renderItem({ item }) {
     return (
       <TouchableOpacity
@@ -89,10 +96,7 @@ export default function HomeScreen({ navigation }) {
         />
 
         <View style={styles.cardInfo}>
-          <Text
-            style={styles.productName}
-            numberOfLines={2}
-          >
+          <Text style={styles.productName} numberOfLines={2}>
             {item.translatedTitle || item.title}
           </Text>
 
@@ -106,9 +110,12 @@ export default function HomeScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      
+      {/* 🔥 FILTROS */}
       <View style={styles.filterContainer}>
         <ScrollView horizontal showsHorizontalScrollIndicator={false}>
 
+          {/* TODOS */}
           <TouchableOpacity
             style={[
               styles.filterBtn,
@@ -126,22 +133,23 @@ export default function HomeScreen({ navigation }) {
             </Text>
           </TouchableOpacity>
 
+          {/* CATEGORIAS */}
           {CATEGORIES.map((cat) => (
             <TouchableOpacity
-              key={cat}
+              key={cat.value}
               style={[
                 styles.filterBtn,
-                selectedCategory === cat && styles.filterBtnActive
+                selectedCategory === cat.value && styles.filterBtnActive
               ]}
-              onPress={() => setSelectedCategory(cat)}
+              onPress={() => setSelectedCategory(cat.value)}
             >
               <Text
                 style={[
                   styles.filterText,
-                  selectedCategory === cat && styles.filterTextActive
+                  selectedCategory === cat.value && styles.filterTextActive
                 ]}
               >
-                {cat}
+                {cat.label}
               </Text>
             </TouchableOpacity>
           ))}
@@ -149,6 +157,7 @@ export default function HomeScreen({ navigation }) {
         </ScrollView>
       </View>
 
+      {/* 🔥 LOADING OU LISTA */}
       {loading ? (
         <View style={styles.loadingContainer}>
           <ActivityIndicator size="large" color="#8b5cf6" />
@@ -169,6 +178,7 @@ export default function HomeScreen({ navigation }) {
   );
 }
 
+/* 🎨 ESTILOS */
 const styles = StyleSheet.create({
   container: {
     flex: 1,
