@@ -64,15 +64,8 @@ export default function ProductDetailScreen({ route }) {
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
-<<<<<<< HEAD
         <ActivityIndicator size="large" color="#8b5cf6" />
         <Text style={styles.loadingText}>Carregando produto...</Text>
-=======
-        <ActivityIndicator size="large" color="#00d4ff" />
-        <Text style={styles.loadingText}>
-          Carregando produto...
-        </Text>
->>>>>>> 61399923515c10218408c6772bd46550a3e10c7c
       </View>
     );
   }

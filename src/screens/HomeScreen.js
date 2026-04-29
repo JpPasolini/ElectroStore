@@ -151,15 +151,8 @@ export default function HomeScreen({ navigation }) {
 
       {loading ? (
         <View style={styles.loadingContainer}>
-<<<<<<< HEAD
           <ActivityIndicator size="large" color="#8b5cf6" />
           <Text style={styles.loadingText}>Carregando produtos...</Text>
-=======
-          <ActivityIndicator size="large" color="#00d4ff" />
-          <Text style={styles.loadingText}>
-            Carregando produtos...
-          </Text>
->>>>>>> 61399923515c10218408c6772bd46550a3e10c7c
         </View>
       ) : (
         <FlatList
