@@ -1,10 +1,10 @@
 import { View, Text, StyleSheet, ScrollView } from 'react-native';
 
 const MEMBERS = [
-  { name: 'Integrante 1 — Coloque seu nome', ra: 'RA: 000001' },
-  { name: 'Integrante 2 — Coloque seu nome', ra: 'RA: 000002' },
-  { name: 'Integrante 3 — Coloque seu nome', ra: 'RA: 000003' },
-  { name: 'Integrante 4 — Coloque seu nome', ra: 'RA: 000004' },
+  { name: 'Gustavo Marcante Vazzoler', ra: 'RA: 1138009' },
+  { name: 'João Paulo Pasolini', ra: 'RA: 1138273' },
+  { name: 'Luis Eduardo Moroso', ra: 'RA: 1138541' },
+  { name: 'Pedro Henrique Renosto', ra: 'RA: 1138042' },
 ];
 
 export default function InfoScreen() {
