@@ -14,7 +14,7 @@ export default function App() {
       <Stack.Navigator
         screenOptions={{
           headerStyle: { backgroundColor: '#0a0a2e' },
-          headerTintColor: '#00d4ff',
+          headerTintColor: '#8b5cf6',
           headerTitleStyle: { fontWeight: 'bold', fontSize: 18 },
         }}
       >
@@ -69,10 +69,10 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
     borderRadius: 8,
     borderWidth: 1,
-    borderColor: '#00d4ff',
+    borderColor: '#8b5cf6',
   },
   headerBtnText: {
-    color: '#00d4ff',
+    color: '#8b5cf6',
     fontWeight: 'bold',
     fontSize: 13,
   },

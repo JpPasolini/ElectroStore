@@ -85,7 +85,7 @@ export default function HomeScreen({ navigation }) {
 
       {loading ? (
         <View style={styles.loadingContainer}>
-          <ActivityIndicator size="large" color="#00d4ff" />
+          <ActivityIndicator size="large" color="#8b5cf6" />
           <Text style={styles.loadingText}>Carregando produtos...</Text>
         </View>
       ) : (
@@ -105,11 +105,11 @@ export default function HomeScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#0a0a2e',
+    backgroundColor: '#07071c',
   },
   filterContainer: {
-    paddingVertical: 12,
-    paddingHorizontal: 10,
+    paddingVertical: 14,
+    paddingHorizontal: 12,
     backgroundColor: '#12123a',
     borderBottomWidth: 1,
     borderBottomColor: '#00d4ff22',
@@ -118,17 +118,17 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#00d4ff55',
     borderRadius: 20,
-    paddingHorizontal: 14,
-    paddingVertical: 7,
-    marginRight: 8,
+    paddingHorizontal: 16,
+    paddingVertical: 8,
+    marginRight: 10,
     backgroundColor: '#1e1e4a',
   },
   filterBtnActive: {
-    backgroundColor: '#00d4ff',
-    borderColor: '#00d4ff',
+    backgroundColor: '#8b5cf6',
+    borderColor: '#8b5cf6',
   },
   filterText: {
-    color: '#00d4ff',
+    color: '#8b5cf6',
     fontWeight: '600',
     fontSize: 13,
   },
@@ -136,38 +136,44 @@ const styles = StyleSheet.create({
     color: '#0a0a2e',
   },
   list: {
-    padding: 12,
+    padding: 14,
+    paddingBottom: 20,
   },
   row: {
     justifyContent: 'space-between',
   },
   card: {
     backgroundColor: '#12123a',
-    borderRadius: 14,
-    marginBottom: 14,
+    borderRadius: 18,
+    marginBottom: 16,
     width: '48%',
     borderWidth: 1,
     borderColor: '#00d4ff22',
     overflow: 'hidden',
+    shadowColor: '#8b5cf6',
+    shadowOpacity: 0.15,
+    shadowRadius: 8,
+    elevation: 5,
   },
   productImage: {
     width: '100%',
-    height: 140,
+    height: 150,
     backgroundColor: '#fff',
+    padding: 10,
   },
   cardInfo: {
     padding: 10,
   },
   productName: {
-    fontSize: 12,
-    color: '#ccccee',
+    fontSize: 13,
+    color: '#e0e0ff',
     fontWeight: '600',
     marginBottom: 6,
-    lineHeight: 17,
+    lineHeight: 18,
   },
   productPrice: {
-    fontSize: 14,
-    color: '#00d4ff',
+    fontSize: 15,
+    color: '#8b5cf6',
     fontWeight: 'bold',
   },
   loadingContainer: {
@@ -177,7 +183,8 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     marginTop: 12,
-    color: '#00d4ff',
+    color: '#8b5cf6',
     fontSize: 15,
+    fontWeight: '500',
   },
 });

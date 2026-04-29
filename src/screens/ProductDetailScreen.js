@@ -36,7 +36,7 @@ export default function ProductDetailScreen({ route }) {
   if (loading) {
     return (
       <View style={styles.loadingContainer}>
-        <ActivityIndicator size="large" color="#00d4ff" />
+        <ActivityIndicator size="large" color="#8b5cf6" />
         <Text style={styles.loadingText}>Carregando produto...</Text>
       </View>
     );
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
   },
   loadingText: {
     marginTop: 12,
-    color: '#00d4ff',
+    color: '#8b5cf6',
     fontSize: 16,
   },
   imageCard: {
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
     marginBottom: 12,
   },
   badgeText: {
-    color: '#00d4ff',
+    color: '#8b5cf6',
     fontWeight: '600',
     fontSize: 12,
   },
@@ -144,7 +144,7 @@ const styles = StyleSheet.create({
   price: {
     fontSize: 28,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#8b5cf6',
     marginBottom: 16,
   },
   divider: {
@@ -155,7 +155,7 @@ const styles = StyleSheet.create({
   descriptionTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#8b5cf6',
     marginBottom: 8,
   },
   description: {

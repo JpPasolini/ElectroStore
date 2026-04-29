@@ -9,7 +9,6 @@ import {
   Alert,
   KeyboardAvoidingView,
   Platform,
-  Image,
 } from 'react-native';
 import axios from 'axios';
 
@@ -31,7 +30,9 @@ export default function LoginScreen({ navigation }) {
       const users = usersResponse.data;
 
       const userExists = users.find(
-        (u) => u.username === username.trim() && u.password === password.trim()
+        (u) =>
+          u.username === username.trim() &&
+          u.password === password.trim()
       );
 
       if (!userExists) {
@@ -60,6 +61,7 @@ export default function LoginScreen({ navigation }) {
     >
       <View style={styles.header}>
         <Text style={styles.logo}>⚡ ElectroStore</Text>
+        <Text style={styles.welcome}>Bem-vindo de volta 👋</Text>
         <Text style={styles.tagline}>Os melhores eletrônicos</Text>
       </View>
 
@@ -70,7 +72,7 @@ export default function LoginScreen({ navigation }) {
         <TextInput
           style={styles.input}
           placeholder="Digite seu usuário"
-          placeholderTextColor="#555"
+          placeholderTextColor="#888"
           value={username}
           onChangeText={setUsername}
           autoCapitalize="none"
@@ -80,13 +82,17 @@ export default function LoginScreen({ navigation }) {
         <TextInput
           style={styles.input}
           placeholder="Digite sua senha"
-          placeholderTextColor="#555"
+          placeholderTextColor="#888"
           value={password}
           onChangeText={setPassword}
           secureTextEntry
         />
 
-        <TouchableOpacity style={styles.button} onPress={handleLogin} disabled={loading}>
+        <TouchableOpacity
+          style={styles.button}
+          onPress={handleLogin}
+          disabled={loading}
+        >
           {loading ? (
             <ActivityIndicator color="#0a0a2e" />
           ) : (
@@ -95,7 +101,8 @@ export default function LoginScreen({ navigation }) {
         </TouchableOpacity>
 
         <Text style={styles.hint}>
-          Consulte os usuários disponíveis em:{'\n'}fakestoreapi.com/users
+          Consulte os usuários disponíveis em:{'\n'}
+          fakestoreapi.com/users
         </Text>
       </View>
     </KeyboardAvoidingView>
@@ -109,28 +116,40 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     padding: 24,
   },
+
   header: {
     alignItems: 'center',
     marginBottom: 32,
   },
+
   logo: {
     fontSize: 36,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#8b5cf6',
     letterSpacing: 2,
   },
+
+  welcome: {
+    fontSize: 16,
+    color: '#ffffff',
+    marginTop: 8,
+    fontWeight: '600',
+  },
+
   tagline: {
     fontSize: 14,
     color: '#8888aa',
     marginTop: 4,
   },
+
   card: {
     backgroundColor: '#12123a',
     borderRadius: 16,
     padding: 24,
     borderWidth: 1,
-    borderColor: '#00d4ff33',
+    borderColor: '#8b5cf633', // 🔥 corrigido (era azul)
   },
+
   cardTitle: {
     fontSize: 18,
     fontWeight: 'bold',
@@ -138,34 +157,39 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     textAlign: 'center',
   },
+
   label: {
     fontSize: 13,
-    color: '#00d4ff',
+    color: '#8b5cf6',
     fontWeight: '600',
     marginBottom: 6,
   },
+
   input: {
     backgroundColor: '#1e1e4a',
     borderWidth: 1,
-    borderColor: '#00d4ff44',
+    borderColor: '#8b5cf644', // 🔥 corrigido (era azul)
     borderRadius: 10,
     padding: 12,
     marginBottom: 16,
     fontSize: 15,
     color: '#fff',
   },
+
   button: {
-    backgroundColor: '#00d4ff',
+    backgroundColor: '#8b5cf6',
     borderRadius: 10,
     padding: 14,
     alignItems: 'center',
     marginTop: 4,
   },
+
   buttonText: {
     color: '#0a0a2e',
     fontWeight: 'bold',
     fontSize: 16,
   },
+
   hint: {
     marginTop: 16,
     fontSize: 11,

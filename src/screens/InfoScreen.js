@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   appName: {
     fontSize: 24,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#8b5cf6',
     marginBottom: 10,
     letterSpacing: 2,
   },
@@ -82,7 +82,7 @@ const styles = StyleSheet.create({
   sectionTitle: {
     fontSize: 16,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#8b5cf6',
     marginBottom: 12,
   },
   memberCard: {
@@ -99,7 +99,7 @@ const styles = StyleSheet.create({
     width: 40,
     height: 40,
     borderRadius: 20,
-    backgroundColor: '#00d4ff',
+    backgroundColor: '#8b5cf6',
     justifyContent: 'center',
     alignItems: 'center',
     marginRight: 12,
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
   },
   memberRa: {
     fontSize: 12,
-    color: '#00d4ff',
+    color: '#8b5cf6',
     marginTop: 2,
   },
   techCard: {
@@ -133,7 +133,7 @@ const styles = StyleSheet.create({
   techTitle: {
     fontSize: 14,
     fontWeight: 'bold',
-    color: '#00d4ff',
+    color: '#8b5cf6',
     marginBottom: 10,
   },
   techItem: {
